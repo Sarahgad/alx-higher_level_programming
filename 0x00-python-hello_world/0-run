@@ -1,2 +1,2 @@
 #!/bin/bash
-./main.py
+filename="$PYFILE" ; python3 "$filename"
