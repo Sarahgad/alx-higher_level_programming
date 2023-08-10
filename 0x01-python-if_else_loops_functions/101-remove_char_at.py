@@ -7,4 +7,4 @@ def remove_char_at(str, n):
             continue
         else:
             str_2 += str[i]
-    return(str_2)
+    return (str_2)
