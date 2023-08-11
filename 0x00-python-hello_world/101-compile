@@ -1,0 +1,2 @@
+#!/bin/bash
+filename="$PYFILE" ; python3 -m compileall "$filename"
