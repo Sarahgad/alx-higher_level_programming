@@ -36,7 +36,7 @@ listint_t *fast, *slow, *secondhalf, *firsthalf;
 
 	if (*head == NULL && (*head)->next == NULL)
 		return (1);
-	while (fast->next != NULL && fast->next->next != NULL)
+	while (fast != NULL && fast->next != NULL)
 {
 	fast = fast->next->next;
 	slow = slow->next;
