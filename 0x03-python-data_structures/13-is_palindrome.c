@@ -44,7 +44,7 @@ listint_t *fast, *slow, *secondhalf, *firsthalf;
 
 	secondhalf = reverselist(&(slow->next));
 
-	while (secondhalf != NULL)
+	while (slow != NULL && secondhalf != NULL)
 	{
 	if ((firsthalf)->n != secondhalf->n)
 	{
