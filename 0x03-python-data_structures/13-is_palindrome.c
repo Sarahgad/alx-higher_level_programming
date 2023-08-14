@@ -10,7 +10,7 @@ listint_t *reverselist(listint_t **head)
 listint_t *prev, *curr, *next;
 prev = NULL;
 curr = *head;
-next = NULL;
+next = *head;
 
 while (curr != NULL)
 {
