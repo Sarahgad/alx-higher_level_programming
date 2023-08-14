@@ -43,7 +43,7 @@ listint_t *fast, *slow, *secondhalf, *firsthalf;
 	slow = slow->next;
 }
 
-	secondhalf = reverselist(&slow->next);
+	secondhalf = reverselist(&(slow->next));
 
 	while (secondhalf != NULL)
 	{
