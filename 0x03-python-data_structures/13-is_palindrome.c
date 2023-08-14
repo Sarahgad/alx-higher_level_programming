@@ -3,7 +3,7 @@
 /**
  *reverselist - reverse the linkedlist
  *@head: pointer
- *Return: prev always success
+ *Return: *head always success
  */
 listint_t *reverselist(listint_t **head)
 {
