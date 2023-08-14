@@ -30,14 +30,14 @@ return (*head);
  */
 int is_palindrome(listint_t **head)
 {
+  if (*head == NULL && (*head)->next == NULL)
+                return (1);
 listint_t *fast, *slow, *secondhalf, *firsthalf;
 	fast = *head;
 	slow = *head;
 	firsthalf = *head;
-	if (*head == NULL && (*head)->next == NULL)
-		return (1);
 
-	while (fast->next->next != NULL && fast->next != NULL)
+	while (fast->next != NULL && fast->next->next != NULL)
 {
 	fast = fast->next->next;
 	slow = slow->next;
