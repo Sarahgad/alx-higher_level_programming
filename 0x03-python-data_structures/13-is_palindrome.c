@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include "lists.h"
-listint_t *reverselist(listint_t *head);
+listint_t *reverselist(listint_t **head);
 /**
  *reverselist - reverse the linkedlist
  *@head: pointer
  *Return: prev always success
  */
-listint_t *reverselist(listint_t *head)
+listint_t *reverselist(listint_t **head)
 {
 listint_t *prev, *curr, *next;
 prev = NULL;
-curr = next = head;
+curr = next = *head;
 
 while (curr != NULL)
 {
@@ -19,7 +19,8 @@ while (curr != NULL)
 	prev = curr;
 	curr = next;
 }
-return (prev);
+*head = prev;
+return (*head);
 }
 /**
  *is_palindrome - check plaindrome
@@ -41,7 +42,7 @@ listint_t *fast, *slow, *secondhalf, *firsthalf;
 	slow = slow->next;
 }
 
-	secondhalf = reverselist(slow->next);
+	secondhalf = reverselist(&slow->next);
 
 	while (secondhalf != NULL)
 	{
