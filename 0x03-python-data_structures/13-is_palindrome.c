@@ -29,39 +29,44 @@ return (*head);
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *fast, *slow, *firsthalf ;
-    	listint_t *secondhalf = NULL;
-
-	fast = *head;
-	slow = *head;
+	listint_t *fast = *head, *slow = *head;
+	listint_t *firsthalf = *head;
+	listint_t *secondhalf = NULL;
+	listint_t *prev_slow = NULL;
+	listint_t *mid_node = NULL;
+	int is_palindrome = 1;
 
 	if (*head == NULL && (*head)->next == NULL)
-		return (1);
-
+		return (is_palindrome);
 	while (fast != NULL && fast->next != NULL)
 {
 	fast = fast->next->next;
+	prev_slow = slow;
 	slow = slow->next;
 }
-	 if (fast != NULL)
-    {
-        secondhalf = slow->next;
-    }
-    else
-    {
-        secondhalf = slow;
-    }
-	secondhalf = reverselist(&secondhalf);
-	firsthalf = *head;
-
-	while (firsthalf != NULL && secondhalf != NULL)
+	if (fast != NULL)
+	{
+	mid_node = slow;
+	slow = slow->next;
+	}
+	secondhalf = reverselist(&slow);
+	while (secondhalf != NULL)
 	{
 	if ((firsthalf)->n != secondhalf->n)
 	{
-		return (0);
+		is_palindrome = 0;
+		break;
 	}
 	firsthalf = firsthalf->next;
 	secondhalf = secondhalf->next;
 	}
-	return (1);
+	    reverselist(&slow);
+	if (mid_node != NULL)
+	{
+	prev_slow->next = mid_node;
+	mid_node->next = slow;
 	}
+	else
+		prev_slow->next = slow;
+	return (is_palindrome);
+}
