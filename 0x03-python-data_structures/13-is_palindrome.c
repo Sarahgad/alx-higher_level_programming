@@ -35,7 +35,6 @@ listint_t *fast, *slow, *secondhalf, *firsthalf;
 		return (1);
 	fast = *head;
 	slow = *head;
-	firsthalf = *head;
 
 	while (fast != NULL && fast->next != NULL)
 {
@@ -44,6 +43,7 @@ listint_t *fast, *slow, *secondhalf, *firsthalf;
 }
 
 	secondhalf = reverselist(&(slow->next));
+	firsthalf = *head;
 
 	while (slow != NULL && secondhalf != NULL)
 	{
