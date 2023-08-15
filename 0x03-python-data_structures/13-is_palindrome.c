@@ -29,12 +29,12 @@ return (*head);
  */
 int is_palindrome(listint_t **head)
 {
-listint_t *fast, *slow, *firsthalf ;
+	listint_t *fast, *slow, *firsthalf ;
+    	listint_t *secondhalf = NULL;
+	listint_t *prev = NULL;
 
 	fast = *head;
 	slow = *head;
-	listint_t *prev = NULL;
-    listint_t *secondhalf = NULL;
 
 	if (*head == NULL && (*head)->next == NULL)
 		return (1);
