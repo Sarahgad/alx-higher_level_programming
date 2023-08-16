@@ -2,8 +2,10 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    else:
-        dict_sorte = dict(sorted(a_dictionary.items()))
-        for k, v in dict_sorte.items():
-            continue
-        return k
+    max_score = float('-inf')
+    best_key = None
+    for key, value in a_dictionary.items():
+        if value > max_score:
+            max_score = value
+            best_key = key
+    return best_key
