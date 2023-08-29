@@ -10,4 +10,5 @@ class Square:
     This is the constructor method for the Square class.
     It initializes the square object.
     """
-    pass
+    def __init__(self):
+        pass
