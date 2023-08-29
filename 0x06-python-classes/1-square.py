@@ -3,10 +3,7 @@
 
 
 class Square:
-    """Represents a square. with size.
-    Attributes:
-        __size (int): The size of square.
-    """
+    """Represents a square."""
     def __init__(self, size):
         """Initializes a Square instance.
         Args:
