@@ -1,5 +1,6 @@
 #!/usr/bin/python
 """
+This is a class that represents a square.
 python3 -c 'print(__import__("my_module").MyClass.__doc__)'
 """
 
