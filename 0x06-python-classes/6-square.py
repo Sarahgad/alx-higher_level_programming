@@ -77,7 +77,9 @@ class Square:
           Don’t fill lines by spaces when position[1] > 0
         """
         if self.__size == 0:
-            print()
+            print("")
+            return
+
         else:
             for i in range(self.__position[1]):
                 print()
