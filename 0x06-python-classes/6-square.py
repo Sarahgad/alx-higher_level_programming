@@ -80,8 +80,26 @@ class Square:
             print("")
             return
 
-        else:
-            for i in range(self.__position[1]):
-                print()
-            for j in range(self.__size):
-                print("_"*self.__position[0] + '#'*self.__size)
+        [print("")for i in range(0, self.__position[1])]
+        for j in range(0, self.__size):
+            [print("_", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0,self.__size)]
+            print("")
+
+#!/usr/bin/python3
+Square = __import__('6-square').Square
+
+my_square_1 = Square(3)
+my_square_1.my_print()
+
+print("--")
+
+my_square_2 = Square(3, (1, 1))
+my_square_2.my_print()
+
+print("--")
+
+my_square_3 = Square(3, (3, 0))
+my_square_3.my_print()
+
+print("--")
