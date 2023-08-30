@@ -68,11 +68,11 @@ class Square:
           Don’t fill lines by spaces when position[1] > 0
         """
         if self.__size == 0:
-            print("")
-            return
+            print()
 
-        [print("")for i in range(0, self.__position[1])]
-        for j in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            print("")
+        for i in range(self.__size):
+            for j in range(self.__position[0]):
+                print(" ", end="")
+            for k in range(self.__size):
+                print("#", end="")
+            print()
