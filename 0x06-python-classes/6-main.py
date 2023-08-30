@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 Square = __import__('6-square').Square
-my_square = Square(3, "position")
-my_square.position = (3, "position")
-my_square.my_print()
+mysquare = Square(3, (0, 1)) 
+mysquare.my_print()
