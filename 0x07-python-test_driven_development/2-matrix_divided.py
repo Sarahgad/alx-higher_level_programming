@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+"""module for divided each element"""
 def matrix_divided(matrix, div):
+    """matrix_divided  divides all elements of a matrix.
+        Args:
+        matrix(list)  a list of lists of integers or floats,
+        div(int,float) 
+        Returns:
+        new_matrix(list): after difenetion
+    """
     newMatrix = []
     newElement = [] 
     if not isinstance(div, (int, float)):
