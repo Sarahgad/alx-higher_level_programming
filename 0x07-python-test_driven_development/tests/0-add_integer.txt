@@ -1,27 +1,51 @@
-"""
+=====================================
 Test cases for add integer function
+=====================================
 
->>> from 0-add_integer _import_ add_integer
+>>> add_integer= __import__ ('0-add_integer').add_integer
 
+add two types for integer
+===========================
 >>> add_integer(1,1)
 2
->>> add_integer(1.5,4)
-3
->>> add_integer(5,-5)
-0
->>> add_integer(-5,7)
-2
->>> add_integer('a',1)
-raise TypeError (a must be an integer)
-
->>> add_integer(1,'b')
-raise TypeError (b must be an integer)
 
 >>> add_integer(7,6.2)
 13
 
 >>> add_integer(1000000000000,60000000000)
-1120000000000
+1060000000000
 
 >>> add_integer(2)
 100
+
+add float
+==========
+>>> add_integer(1.5,4)
+5
+
+add signed integer
+===================
+>>> add_integer(5,-5)
+0
+
+>>> add_integer(-5,7)
+2
+
+TypeError handling
+=====================
+
+>>> add_integer('a',1)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(1,'b')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+"""
+
+
+
+
