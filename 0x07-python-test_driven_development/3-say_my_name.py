@@ -2,13 +2,13 @@
 def say_my_name(first_name, last_name=""):
     """
      a function that prints My name is <first name> <last name>
-     ARGS: 
+     ARGS:
         first_name (str): represent first user name
         last_name  (str): default by empty str represent second user name
     """
     if not isinstance(first_name, str):
-        raise TypeError ("first_name must be a string")
+        raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
-        raise TypeError ("last_name must be a string") 
-    
+        raise TypeError("last_name must be a string")
+
     print("My name is {0} {1}".format(first_name, last_name))
