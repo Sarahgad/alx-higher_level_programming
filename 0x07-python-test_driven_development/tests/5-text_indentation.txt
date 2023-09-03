@@ -1,0 +1,25 @@
+"""
+===============================
+Test cases for Text Indentation
+===============================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(1304)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("    hello; it's me: sarah do you remeber")
+hello; it's me:
+<BLANKLINE>
+sarah do you remeber
+
+>>> text_indentation("hello,hello:iam good")
+hello,hello:
+<BLANKLINE>
+iam good
+
+>>> text_indentation("sarah   ")
+sarah
+
+"""

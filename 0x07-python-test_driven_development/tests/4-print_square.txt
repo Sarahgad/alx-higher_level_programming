@@ -1,6 +1,6 @@
 """
 ===========================
-Test cases for print square 
+Test cases for print square
 ===========================
 
 >>> print_square = __import__('4-print_square').print_square
