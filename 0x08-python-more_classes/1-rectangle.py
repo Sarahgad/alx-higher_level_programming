@@ -10,29 +10,19 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
-        """intialize the variable of rectangle"""
- 
         self.width = width
         self.height = height
 
         @property
         def width(self):
-            """get the value of the width
-
-            Return: width
-            """
             return self.__width
 
         @width.setter
         def width(self, value):
-            """reset the value of the width
-                Args:
-                value: the new value
-            """
             if not isinstance(value, int):
-                raise TypeError("width must be an integer")
+                raise TypeError('width must be an integer')
             elif value < 0:
-                raise ValueError("width must be >= 0")
+                raise ValueError('width must be >= 0')
             self.__width = value
 
         @property
