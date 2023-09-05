@@ -7,6 +7,7 @@ Test cases for add integer function
 
 add two types for integer
 ===========================
+
 >>> add_integer(1,1)
 2
 
