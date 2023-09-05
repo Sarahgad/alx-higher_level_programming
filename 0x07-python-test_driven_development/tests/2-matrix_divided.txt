@@ -4,6 +4,13 @@ Test cases for divides all elements in matrix
 =============================================
 
 >>> matrix_divided = __import__ ('2-matrix_divided').matrix_divided
+>>> f = __import__('0-add_integer').add_integer.__doc__
+>>> len(f) > 1
+True
+
+>>> l = __import__('0-add_integer').__doc__
+>>> len(l) > 1
+True
 
  divides all elements of a matrix.
 ==================================

@@ -4,6 +4,13 @@ Test cases for print square
 ===========================
 
 >>> print_square = __import__('4-print_square').print_square
+>>> f = __import__('0-add_integer').add_integer.__doc__
+>>> len(f) > 1
+True
+
+>>> l = __import__('0-add_integer').__doc__
+>>> len(l) > 1
+True
 
 >>> print_square("4")
 Traceback (most recent call last):
