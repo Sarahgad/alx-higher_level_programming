@@ -3,6 +3,13 @@
 Test cases for Text Indentation
 ===============================
 >>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> f = __import__('0-add_integer').add_integer.__doc__
+>>> len(f) > 1
+True
+
+>>> l = __import__('0-add_integer').__doc__
+>>> len(l) > 1
+True
 
 >>> text_indentation(1304)
 Traceback (most recent call last):

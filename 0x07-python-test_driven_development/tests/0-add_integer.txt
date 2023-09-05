@@ -4,6 +4,13 @@ Test cases for add integer function
 =====================================
 
 >>> add_integer= __import__ ('0-add_integer').add_integer
+>>> f = __import__('0-add_integer').add_integer.__doc__
+>>> len(f) > 1
+True
+
+>>> l = __import__('0-add_integer').__doc__
+>>> len(l) > 1
+True
 
 add two types for integer
 ===========================

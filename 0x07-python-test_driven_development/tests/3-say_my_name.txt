@@ -4,12 +4,19 @@ Test cases for say my name
 ==========================
 
 >>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> f = __import__('0-add_integer').add_integer.__doc__
+>>> len(f) > 1
+True
+
+>>> l = __import__('0-add_integer').__doc__
+>>> len(l) > 1
+True
 
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
 >>> say_my_name("Bob")
-My name is Bob
+My name is Bob 
 
 >>> say_my_name(12, "White")
 Traceback (most recent call last):
