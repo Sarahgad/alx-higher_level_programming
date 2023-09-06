@@ -9,27 +9,31 @@ class max_integer_test (unittest.TestCase):
         self.assertTrue(len(f) > 2)
 
     def test_valuemaxintegration(self):
+        """check of the correct value"""
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([1, 2, -7, 4]), 4)
         self.assertEqual(max_integer([]), None)
 
     
     def test_none(self):
-        """Tests for passing none as argument"""
+        """check for passing none as argument"""
         with self.assertRaises(TypeError):
             max_integer(None)
     
     def test_typemaxint(self):
+        """check the type of value"""
         list = [1, 4, "alx", 6, 7] 
         with self.assertRaises(TypeError):
             max_integer(list)
     
     def test_nonelist(self):
+        """check the empty list"""
         list = []
         self.assertIsNone(max_integer(list), None)
 
 
 if __name__ == '__main__':
+    """calling the unit test"""
     unittest.main() 
         
 
