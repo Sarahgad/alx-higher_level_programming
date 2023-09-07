@@ -13,8 +13,10 @@ class max_integer_test (unittest.TestCase):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([1, 2, -7, 4]), 4)
         self.assertEqual(max_integer([]), None)
-
-    
+        self.assertEqual(max_integer([3]), 3)
+        self.assertEqual(max_integer([4, 2, -7, 1]), 4)
+        self.assertEqual(max_integer([1, 3, 4, -7, 2]), 4)
+        
     def test_none(self):
         """check for passing none as argument"""
         with self.assertRaises(TypeError):
@@ -35,6 +37,3 @@ class max_integer_test (unittest.TestCase):
 if __name__ == '__main__':
     """calling the unit test"""
     unittest.main() 
-        
-
-
