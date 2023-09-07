@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" function tell the first and second name"""
 def say_my_name(first_name, last_name=""):
     """
      a function that prints My name is <first name> <last name>
