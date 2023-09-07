@@ -63,9 +63,9 @@ Traceback (most recent call last):
     ...
 OverflowError: cannot convert float infinity to integer
 
->>> add_integer(1, float('None'))
+>>> add_integer(1, float('NaN'))
 Traceback (most recent call last):
-	...
-ValueError: could not convert string to float: 'None'
+    ...
+ValueError: cannot convert float NaN to integer
 
 """
