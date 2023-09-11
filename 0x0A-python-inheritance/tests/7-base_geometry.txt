@@ -6,11 +6,11 @@ Test cases for BaseGeometry class
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> f = __import__('7-base_geometry').BaseGeometry.__doc__
->>> len(f) > 0
+>>> len(f) > 1 
 True
 
 >>> l = __import__('7-base_geometry').__doc__
->>> len(l) > 0
+>>> len(l) > 1
 True
 
 >>> bg = BaseGeometry()
