@@ -33,7 +33,6 @@ ValueError: distance must be greater than 0
 
 >>> print(bg.area())
 Traceback (most recent call last):
-    ...
 Exception: area() is not implemented
 
 >>> bg.integer_validator("positive", 42)
@@ -41,20 +40,16 @@ Exception: area() is not implemented
 >>> bg.integer_validator("large", 999999999)
 >>> bg.integer_validator("not_an_int", "abc")
 Traceback (most recent call last):
-    ...
 TypeError: not_an_int must be an integer
 
 >>> bg.integer_validator("float_value", 3.14)
 Traceback (most recent call last):
-    ...
 TypeError: float_value must be an integer
 
 >>> bg.integer_validator("negative", -10)
 Traceback (most recent call last):
-    ...
 ValueError: negative must be greater than 0
 >>> bg.integer_validator("", 42)
 >>> bg.integer_validator("large_negative", -999999999)
 Traceback (most recent call last):
-    ...
 ValueError: large_negative must be greater than 0
