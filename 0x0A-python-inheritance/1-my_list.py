@@ -2,10 +2,10 @@
 """costruct class sorted list"""
 
 
-class MyList(list):
+class  MyList(list):
     """class inhrenet from list class"""
 
-    def __init__(self):
+    def __init__ (self):
         """initized subclass"""
         super().__init__()
 
