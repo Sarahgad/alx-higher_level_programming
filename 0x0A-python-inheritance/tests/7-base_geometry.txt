@@ -108,6 +108,6 @@ SyntaxError: invalid syntax
 >>> bg.integer_validator("width", 8, 20)
 Traceback (most recent call last):
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
-true.integer_validator("age", True)
+>>> bg.integer_validator("age", True)
 Traceback (most recent call last):
 TypeError: age must be an integer
