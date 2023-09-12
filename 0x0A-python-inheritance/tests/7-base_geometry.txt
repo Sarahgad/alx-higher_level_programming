@@ -82,7 +82,6 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 TypeError: age must be an integer
 
->>> bg.integer_validator("age", True)
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
@@ -108,3 +107,6 @@ SyntaxError: invalid syntax
 >>> bg.integer_validator("width", 8, 20)
 Traceback (most recent call last):
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> true = BaseGeometry()
+>>> true.integer_validator("age", True)
