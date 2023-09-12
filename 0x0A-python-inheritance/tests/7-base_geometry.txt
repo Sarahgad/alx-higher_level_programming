@@ -100,6 +100,9 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 >>> bg.integer_validator(True, 2)
+Traceback (most recent call last):
+TypeError: width must be an integer
+
 
 >>> bg.integer_validator(None, 2)
 
