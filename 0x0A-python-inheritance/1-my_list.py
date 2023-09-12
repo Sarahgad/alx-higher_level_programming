@@ -5,10 +5,6 @@
 class MyList(list):
     """class inhrenet from list class"""
 
-    def __init__(self):
-        """initized subclass"""
-        super().__init__()
-
     def print_sorted(self):
         """printed sorted function"""
 
