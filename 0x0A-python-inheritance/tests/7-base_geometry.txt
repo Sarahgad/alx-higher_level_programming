@@ -91,4 +91,10 @@ Exception: area() is not implemented
 >>> bg.integer_validator("Big", 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
 
 >>> bg.integer_validator(1111, 1111)
- 
+
+>>> a = [1, 2, 3, 4]
+>>> bg.integer_validator("asd", a[1])
+
+>>> bg.integer_validator(, )
+Traceback (most recent call last):
+SyntaxError: invalid syntax
