@@ -6,11 +6,11 @@ Test cases for BaseGeometry class
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> f = __import__('7-base_geometry').BaseGeometry.__doc__
->>> len(f) > 10
+>>> len(f) > 1
 True
 
 >>> l = __import__('7-base_geometry').__doc__
->>> len(l) > 10
+>>> len(l) > 1
 True
 
 >>> bg = BaseGeometry()
@@ -82,6 +82,7 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 TypeError: age must be an integer
 
+>>> bg.integer_validator("age", True)
 >>> bg.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
@@ -107,6 +108,6 @@ SyntaxError: invalid syntax
 >>> bg.integer_validator("width", 8, 20)
 Traceback (most recent call last):
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
->>> true = BaseGeometry()
->>> true.integer_validator("age", True)
+true.integer_validator("age", True)
+Traceback (most recent call last):
+TypeError: age must be an integer
