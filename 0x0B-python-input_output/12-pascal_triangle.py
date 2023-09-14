@@ -1,12 +1,20 @@
 #!/usr/bin/python3
 def pascal_triangle(n):
-    list = [[]]
-
+    lists = []*n
     for i in range (n):
-        list += [[1]]
-        for i in range(n - (n - i)):
-            list  += [list[i - 1] + list[i - 2]]
-        return list
+        lists.append([0]*i)
+        
+    for list in lists: 
+        list.insert(0,1)
+        if len(list) > 1:
+            list[-1] = 1
+    for i in range(2, n):
+        for j in range(1, i):
+            lists[i][j] = lists[i-1][j-1] + lists[i-1][j]
+    return lists
+
+
+    
     
 def print_triangle(triangle):
     """
@@ -17,4 +25,4 @@ def print_triangle(triangle):
 
 
 if __name__ == "__main__":
-    print_triangle(pascal_triangle(5))
+     print_triangle(pascal_triangle(5))
