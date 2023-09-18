@@ -48,7 +48,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """return list"""
-        if json_string is None or json_string == []:
+        if json_string is None or json_string == "[]":
             return "[]"
         else:
             list_dict = json.loads(json_string)
