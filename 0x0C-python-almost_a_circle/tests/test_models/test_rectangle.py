@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """the test case for Rectangle class"""
 import unittest
 import pycodestyle
