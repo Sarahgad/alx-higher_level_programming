@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """class Rectangle that inhrient from Base"""
 from models.rectangle import Rectangle
 
