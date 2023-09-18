@@ -5,7 +5,6 @@ import pycodestyle
 import sys
 import io
 from models.rectangle import Rectangle
-import pycodestyle
 
 
 class TestCodeFormat(unittest.TestCase):

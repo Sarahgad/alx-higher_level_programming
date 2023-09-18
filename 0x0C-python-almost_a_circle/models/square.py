@@ -1,9 +1,9 @@
 """class Rectangle that inhrient from Base"""
-from models.rectangle import Square
+from models.rectangle import Rectangle
 from models.base import Base
 
 
-class Square(Square):
+class Square(Rectangle):
     """Class constructor:
     width, height, x, y
     super class with id"""

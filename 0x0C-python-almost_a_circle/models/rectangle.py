@@ -3,7 +3,7 @@
 from models.base import Base
 
 
-class Square(Base):
+class Rectangle(Base):
     """Class constructor:
     width, height, x, y
     super class with id"""
