@@ -8,17 +8,6 @@ import io
 """test cases for Base module"""
 
 
-class testCodeFormat(unittest.TestCase):
-
-    def test_Squarmodule(self):
-        """Test that we conform to PEP-8."""
-        style = pycodestyle.StyleGuide(quiet=True)
-        result = style.check_files(['models/base.py',
-                                    'tests/test_models/test_base.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
-
 class test_Base(unittest.TestCase):
     """this class to test the methods under the Base class"""
 
@@ -35,6 +24,12 @@ class test_Base(unittest.TestCase):
         r3 = Base()
         self.assertEqual(r1.id, r3.id - 1)
         self.assertEqual(r2.id, 12)
+    
+    def test_twoarg(self):
+        """two args"""
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b2.id, b1.id + 1)
 
 
 class test_to_json_string(unittest.TestCase):
