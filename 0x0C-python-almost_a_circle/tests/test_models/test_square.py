@@ -7,7 +7,6 @@ import io
 from models.square import Square
 
 
-
 class testCodeFormat(unittest.TestCase):
 
     def test_Squarmodule(self):
