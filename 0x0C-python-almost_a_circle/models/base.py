@@ -82,10 +82,14 @@ class Base:
         with open(file, "w", newline='') as csv_file:
             if list_objs is None:
                 csv_file.write("[]")
+            if cls.__name__ == "Rectangle":
+                fieldnames = ["id", "width", "height", "x", "y"]
             else:
-                writer = csv.writer(csv_file)
+                fieldnames = ["id", "size", "x", "y"]
+
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                 for obj in list_objs:
-                    writer.writerow(obj.to_csv())
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
@@ -93,10 +97,14 @@ class Base:
         file = cls.__name__ + ".csv"
         try:
             with open(file, newline='') as csv_newfile:
-                csv_reader = csv.reader(csv_newfile)
-                instance = []
-                for row in csv_reader:
-                    instance.append(cls.from_csv(row))
-                    return instance
-        except FileNotFoundError:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dict = csv.DictReader(csv_newfile, fieldnames=fieldnames)
+                list_dict = [dict([k, int(v)] for k, v in d.items())
+                             for d in list_dict]
+                return [cls.create(**diction) for diction in list_dict]
+
+        except IOError:
             return []
