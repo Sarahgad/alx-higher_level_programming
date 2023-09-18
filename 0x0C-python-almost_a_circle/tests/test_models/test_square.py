@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """test case for square module"""
 import unittest
 import pycodestyle
