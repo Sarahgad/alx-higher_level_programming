@@ -5,6 +5,9 @@ from models.square import Square
 import pycodestyle
 import sys
 import io
+import os
+import tempfile
+import json
 """test cases for Base module"""
 
 
@@ -39,7 +42,6 @@ class test_to_json_string(unittest.TestCase):
         r1 = Base()
         jsonstring = r1.to_json_string(list_dictionary)
         self.assertEqual(jsonstring, '[]')
-
 
 if __name__ == '__main__':
     """calling the unit test"""
