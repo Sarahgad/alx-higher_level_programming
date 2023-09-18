@@ -40,6 +40,16 @@ class Square(Rectangle):
                 "x": self.x,
                 "y": self.y}
 
+    def to_csv(self):
+        """to csv"""
+        return [self.id, self.size, self.x, self.y]
+
+    @classmethod
+    def from_csv(cls, row):
+        """from csv"""
+        id, size, x, y = row
+        return cls(int(size), int(x), int(y), int(id))
+
     def __str__(self):
         """represent the object"""
         return "[Square] ({0}) {1}/{2} - {3}".format(self.id,

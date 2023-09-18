@@ -74,3 +74,29 @@ class Base:
             return instance
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv"""
+        file = cls.__name__ + ".csv"
+        with open(file, "w", newline='') as csv_file:
+            if list_objs is None:
+                csv_file.write("[]")
+            else:
+                writer = csv.writer(csv_file)
+                for obj in list_objs:
+                    writer.writerow(obj.to_csv())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from file"""
+        file = cls.__name__ + ".csv"
+        try:
+            with open(file, newline='') as csv_newfile:
+                csv_reader = csv.reader(csv_newfile)
+                instance = []
+                for row in csv_reader:
+                    instance.append(cls.from_csv(row))
+                    return instance
+        except FileNotFoundError:
+            return []
