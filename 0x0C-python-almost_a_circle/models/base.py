@@ -87,16 +87,17 @@ class Base:
             else:
                 fieldnames = ["id", "size", "x", "y"]
 
-                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-                for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            for obj in list_objs:
+                writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
         """load from file"""
         file = cls.__name__ + ".csv"
+        instances = []
         try:
-            with open(file, newline='') as csv_newfile:
+            with open(file, "r", newline='') as csv_newfile:
                 if cls.__name__ == "Rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
@@ -106,5 +107,5 @@ class Base:
                              for d in list_dict]
                 return [cls.create(**diction) for diction in list_dict]
 
-        except IOError:
+        except FileNotFoundError:
             return []
