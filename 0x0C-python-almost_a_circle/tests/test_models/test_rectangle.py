@@ -263,12 +263,12 @@ class test_stringmethod(unittest.TestCase):
 
     def test_midarguments(self):
         r10 = Rectangle(4, 6, 5, 6)
-        expected_string = "[Rectangle] (56) 5/6 - 4/6"
+        expected_string = "[Rectangle] (49) 5/6 - 4/6"
         self.assertEqual(str(r10), expected_string)
 
     def test_minarguments(self):
         r11 = Rectangle(6, 5, 7)
-        expected_string = "[Rectangle] (57) 7/0 - 6/5"
+        expected_string = "[Rectangle] (50) 7/0 - 6/5"
         self.assertEqual(str(r11), expected_string)
 
 
