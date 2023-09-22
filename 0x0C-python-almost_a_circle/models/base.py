@@ -3,6 +3,7 @@
 the “base” of all other classes in this project."""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -109,3 +110,42 @@ class Base:
 
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """let's have fun with a turtule"""
+
+        shap = turtle.Turtle()
+        shap.shape("turtle")
+        shap.color("green")
+        shap.speed(1)
+
+        wn = turtle.Screen()
+        wn.bgcolor("black")
+        wn.title("Sarah's shapes")
+
+        for rect in list_rectangles:
+            if rect.width <= 0 or rect.height <= 0:
+                continue
+
+            shap.fillcolor("yellow")
+            shap.begin_fill()
+            for _ in range(2):
+                shap.forward(rect.width)
+                shap.left(90)
+                shap.forward(rect.height)
+                shap.left(90)
+            shap.end_fill()
+
+        for square in list_squares:
+            if square.size <= 0:
+                continue
+
+            shap.fillcolor("purple")
+            shap.begin_fill()
+            for _ in range(4):
+                shap.forward(square.size)
+                shap.left(90)
+            shap.end_fill()
+
+        turtle.done()
