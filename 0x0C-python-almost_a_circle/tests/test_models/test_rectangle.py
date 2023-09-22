@@ -29,6 +29,11 @@ class test_initialization(unittest.TestCase):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
+    def test_equality(self):
+        r1 = Rectangle(3, 6)
+        r2 = Rectangle(3, 6)
+        self.assertNotEqual(r1, r2)
+
 
 class test_RectangleRaise(unittest.TestCase):
     """test the validation of getter and setter"""

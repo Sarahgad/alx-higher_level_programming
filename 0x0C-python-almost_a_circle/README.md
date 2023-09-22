@@ -44,3 +44,7 @@ To run the project and execute the unit tests, follow these steps:
    ````bash
     python3 -m unittest discover tests
    ```
+   ````bash
+
+  python3 -m unittest tests/test_models/test_base.py
+  ```

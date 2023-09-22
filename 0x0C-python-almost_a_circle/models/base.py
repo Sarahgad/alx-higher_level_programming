@@ -39,7 +39,7 @@ class Base:
         """return list"""
         file = cls.__name__ + ".json"
         with open(file, "w") as json_file:
-            if list_objs is None:
+            if list_objs is None or list_objs == []:
                 json_file.write("[]")
             else:
                 list_json = cls.to_json_string([obj.to_dictionary()
