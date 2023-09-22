@@ -78,6 +78,22 @@ class test_to_json_string(unittest.TestCase):
         expected_output = '[{"width": 2, "height": 4, "id": 1}, {"width": 3, "height": 5, "id": 2}, {"size": 5, "id": 3}]'
         self.assertEqual(json_string, expected_output)
 
+class TestSquareSize(unittest.TestCase):
+    """tests for load from file"""
+    def test_load_from_emptyfile(self):
+        """non exists empty file"""
+        if (os.path.exists("Rectangle.json") is True):
+            os.remove("Rectangle.json")
+        if (os.path.exists("Square.json") is True):
+            os.remove("Square.json")
+        if (os.path.exists("Base.json") is True):
+            os.remove("Base.json")
+        result = Rectangle.load_from_file()
+        self.assertEqual(result, [])
+        # os.mknod("Rectangle.json")
+        # result = Rectangle.load_from_file()
+        # self.assertEqual(result, [])
+         
 
         
 if __name__ == '__main__':
