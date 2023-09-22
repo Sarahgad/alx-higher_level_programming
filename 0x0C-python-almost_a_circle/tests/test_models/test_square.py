@@ -231,6 +231,17 @@ class test_Recdisplay(unittest.TestCase):
         sys.stdout = sys.__stdout__  # Restore stdout
         self.assertEqual(captured_output.getvalue(), output)
 
+    def test_print_3(self):
+        output = "\n  ####\n  ####\n  ####\n  ####\n"
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        r1 = Square(4)
+        r1.x = 2
+        r1.y = 1
+        r1.display()
+        sys.stdout = sys.__stdout__  # Restore stdout
+        self.assertEqual(captured_output.getvalue(), output)
+
 class test_stringmethod(unittest.TestCase):
     def test_fullarguments(self):
         r1 = Square(4, 6, 2, 1)
