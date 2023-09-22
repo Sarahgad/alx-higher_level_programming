@@ -139,6 +139,42 @@ class TestBase_loadfromfile(unittest.TestCase):
         result = Rectangle.load_from_file()
         self.assertEqual(result, [])
 
+    def test_load_from_Rec(self):
+        rec1 = Rectangle(2, 4)
+        rec2 = Rectangle(1, 3)
+        rec3 = Rectangle(7, 8)
+        myList = [rec1, rec2, rec3]
+        Rectangle.save_to_file(myList)
+        myListLoaded = Rectangle.load_from_file()
+        self.assertEqual(type(myList), type(myListLoaded))
+        self.assertEqual(len(myList), len(myListLoaded))
+        for i in range(len(myList)):
+            self.assertEqual(type(myList[i]), type(myListLoaded[i]))
+            self.assertEqual(myList[i].to_dictionary(), myListLoaded[i].to_dictionary())
+        os.remove("Rectangle.json")
+
+    def test_load_from_Sq(self):
+        sq1 = Square(2)
+        sq2 = Square(1)
+        sq3 = Square(7)
+        myList = [sq1, sq2, sq3]
+        Square.save_to_file(myList)
+        myListLoaded = Square.load_from_file()
+        self.assertEqual(type(myList), type(myListLoaded))
+        self.assertEqual(len(myList), len(myListLoaded))
+        for i in range(len(myList)):
+            self.assertEqual(type(myList[i]), type(myListLoaded[i]))
+            self.assertEqual(myList[i].to_dictionary(), myListLoaded[i].to_dictionary())
+        os.remove("Square.json")
+
+    def test_extra_args(self):
+        with self.assertRaises(TypeError):
+            Base.load_from_file("hello")
+
+
+
+
+
          
 
         
