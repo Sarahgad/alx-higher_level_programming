@@ -77,8 +77,56 @@ class test_to_json_string(unittest.TestCase):
         json_string = Base.to_json_string(list_of_dictionary)
         expected_output = '[{"width": 2, "height": 4, "id": 1}, {"width": 3, "height": 5, "id": 2}, {"size": 5, "id": 3}]'
         self.assertEqual(json_string, expected_output)
+class TestBase_save_to_file(unittest.TestCase):
+    def test_save_to_empty_file(self):
+        Square.save_to_file([])
+        with open ("Square.json") as file:
+            self.assertEqual('[]', file.read())
 
-class TestSquareSize(unittest.TestCase):
+    def test_save_to_None_file(self):
+        Square.save_to_file(None)
+        with open ("Square.json") as file:
+            self.assertEqual('[]', file.read())
+
+    def test_save_to_empty_Rec(self):
+        Rectangle.save_to_file([])
+        with open ("Rectangle.json") as file:
+            self.assertEqual('[]', file.read())
+
+    def test_save_to_None_Rectangle(self):
+        Rectangle.save_to_file(None)
+        with open ("Rectangle.json") as file:
+            self.assertEqual('[]', file.read())
+
+    def test_save_to_oneRec(self):
+        rect = Rectangle(10, 7, 2, 8, 5)
+        Rectangle.save_to_file([rect])
+        with open("Rectangle.json") as file:
+            self.assertEqual(len(file.read()), 53)
+
+
+    def test_save_to_TwoRec(self):
+        rect1 = Rectangle(10, 7, 2, 8, 5)
+        rect2 = Rectangle(4, 5, 6, 8, 7)
+        Rectangle.save_to_file([rect1, rect2])
+        with open("Rectangle.json") as file:
+            self.assertEqual(len(file.read()), 105)
+
+    def test_save_to_oneSeq(self):
+        seq = Square(10, 7, 2, 5)
+        Square.save_to_file([seq])
+        with open("Square.json") as file:
+            self.assertEqual(len(file.read()), 39)
+
+
+    def test_save_to_TwoSq(self):
+        sq1 = Square(10, 2, 8, 5)
+        sq2 = Square(4, 6, 8, 7)
+        Square.save_to_file([sq1, sq2])
+        with open("Square.json") as file:
+            self.assertEqual(len(file.read()), 77)
+
+class TestBase_loadfromfile(unittest.TestCase):
     """tests for load from file"""
     def test_load_from_emptyfile(self):
         """non exists empty file"""
@@ -90,9 +138,7 @@ class TestSquareSize(unittest.TestCase):
             os.remove("Base.json")
         result = Rectangle.load_from_file()
         self.assertEqual(result, [])
-        # os.mknod("Rectangle.json")
-        # result = Rectangle.load_from_file()
-        # self.assertEqual(result, [])
+
          
 
         
