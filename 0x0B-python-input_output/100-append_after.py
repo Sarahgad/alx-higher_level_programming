@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def append_after(filename="", search_string="", new_string=""):
+    """insert the new string if you found the search string"""
     content = []
     with open(filename, 'r') as file:
         for line in file:
