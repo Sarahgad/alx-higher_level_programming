@@ -9,4 +9,3 @@ INSERT INTO second_table (id, name, score)
             (2, "ALEX", 3),
             (3, "BOb", 14),
             (4, "George", 8);
-SELECT * from second_table;
