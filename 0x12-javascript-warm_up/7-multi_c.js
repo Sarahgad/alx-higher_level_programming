@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 // #!/usr/local/bin/node
 
 const number = parseInt(process.argv[2], 10);
