@@ -99,7 +99,7 @@ counter(); // Outputs: 1
 counter(); // Outputs: 2
 ```
 
-## What is a prototype
+# What is a prototype
 
 In JavaScript, a prototype is an internal, hidden property of objects that allows objects to inherit properties and methods from other objects. Every JavaScript object has an associated prototype, which acts as a template or blueprint for that object. Understanding prototypes is fundamental to understanding JavaScript's object-oriented nature.
 
