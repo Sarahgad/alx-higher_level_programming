@@ -5,12 +5,11 @@ all states from the database
 
 
 if __name__ == "__main__":
-    import MySQLdb
+    import MySQLdb as mysql
     import sys
-    container = {'username': sys.argv[1],
-
-                 'password': sys.argv[2],
-                 'database': sys.argv[3],
+    container = {'user': sys.argv[1],
+                 'passwd': sys.argv[2],
+                 'db': sys.argv[3],
                  'host': 'localhost',
                  'port': 3306}
 
@@ -20,3 +19,4 @@ if __name__ == "__main__":
     rows = cur.fetchall()
     for row in rows:
         print(row)
+
