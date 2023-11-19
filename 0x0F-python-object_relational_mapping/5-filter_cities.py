@@ -12,8 +12,8 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3])
     cur = db.cursor()
     cmd = "select cities.name from cities inner join states on\
-           states.id=cities.state_id where states.name='Texas';"
-    cur.execute(cmd)
+           states.id=cities.state_id where states.name=%s"
+    cur.execute(cmd, (argv[4],))
     rows = cur.fetchall()
     for row in rows:
         print(row)
