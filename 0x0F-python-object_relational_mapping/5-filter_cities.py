@@ -15,5 +15,4 @@ if __name__ == "__main__":
            states.id=cities.state_id WHERE states.name=%s"""
     cur.execute(cmd, (argv[4],))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    print(", ".join([row[0] for row in rows]))
