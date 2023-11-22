@@ -16,5 +16,5 @@ if __name__ == "__main__":
     list_State = session.query(State).order_by(State.id).all()
     for instance in list_State:
         print(f"{instance.id}:  {instance.name}")
-    session = session.commit()
+    session = session.close()
     Base.metadata.create_all(engine)
