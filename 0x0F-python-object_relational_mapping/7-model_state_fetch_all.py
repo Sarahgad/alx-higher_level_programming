@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base = declarative_base(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    list_State = session.query(State).order_by(State.id)
+    list_State = session.query(State).order_by(State.id).all()
     for instance in list_State:
         print(f"{instance.id}:  {instance.name}")
     session = session.commit()
