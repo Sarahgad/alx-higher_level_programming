@@ -3,7 +3,7 @@
 """
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -17,5 +17,5 @@ if __name__ == "__main__":
     list_State = session.query(State).order_by(State.id).all()
 
     for instance in list_State:
-        print(f"{instance.id}:  {instance.name}")
+        print(f"{instance.id}: {instance.name}")
     session.close()
