@@ -20,5 +20,3 @@ if __name__ == "__main__":
     session.add(state)
     session.add(city)
     session.commit()
-
-    session.close()
