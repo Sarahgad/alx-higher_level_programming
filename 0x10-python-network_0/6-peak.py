@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Technical interview"""
 
+
 def find_peak(list_of_integers):
     """find peak method"""
     if list_of_integers == []:
@@ -13,4 +14,3 @@ def find_peak(list_of_integers):
         else:
             low = mid + 1
     return list_of_integers[low]
-
