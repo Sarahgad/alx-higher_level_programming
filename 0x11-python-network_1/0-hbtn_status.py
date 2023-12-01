@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""Write a Python script that fetches"""
+""" Get status in https://intranet.hbtn.io/status"""
 import urllib.request
 
 if __name__ == "__main__":
-    url = "https://alx-intranet.hbtn.io/status"
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(url) as response:
-        data = response.read()
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        html = response.read()
         print("Body response:")
-        print("\t- type: {}".format(type(data)))
-        print("\t- content: {}".format(data))
-        print("\t- utf8 content:".format(data.decode("utf-8")))
+        print("\t- type: {}\n\t- content: {}".format(type(html), html))
+        print("\t- utf8 content: {}".format(html.decode('UTF-8')))
