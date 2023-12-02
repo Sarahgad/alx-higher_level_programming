@@ -5,14 +5,12 @@ from sys import argv
 
 if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
-    if argv[1] == None:
-        data = {'q': ""}
-    else:
+    if len(argv) == 2:
         data = {'q': argv[1]}
-    response = requests.post(url=url, data=data)
-    if not response.json():
-        print("Not a valid JSON")
     else:
+        data = {'q': ""}
+    response = requests.post(url=url, data=data)
+    try:
         response_dict = response.json()
         id = response_dict['id']
         name = response_dict['name']
@@ -20,3 +18,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(id, name))
         else:
             print("No result")
+    except ValueError:
+        print("Not a valid JSON")
