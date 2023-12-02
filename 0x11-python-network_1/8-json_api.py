@@ -11,9 +11,9 @@ if __name__ == "__main__":
         data = {'q': ""}
     response = requests.post(url=url, data=data)
     try:
-        response_dict = response.json()
-        if response_dict:
-            print("[{}] {}".format(response_dict.get("id"), response_dict.get("name")))
+        resp = response.json()
+        if resp:
+            print("[{}] {}".format(resp.get("id"), resp.get("name")))
         else:
             print("No result")
     except ValueError:
